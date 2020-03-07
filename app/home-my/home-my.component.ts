@@ -1,5 +1,5 @@
-class HomeController implements ng.IController {
-    welcome:string='hello ng';
+class HomeMyController implements ng.IController {
+    welcome:string='hello My ng';
     count: number;
     addCount(e){
         e.stopPropagation();
@@ -17,12 +17,12 @@ class HomeController implements ng.IController {
     }
 }
 
-export class HomeComponent implements ng.IComponentOptions {
-    static NAME: string = 'homeView';
+export class HomeMyComponent implements ng.IComponentOptions {
+    static NAME: string = 'homeMyView';
     controller: any;
     templateUrl: any;
     constructor() {
-        this.controller = HomeController;
-        this.templateUrl = require('./home.html');
+        this.controller = HomeMyController;
+        this.templateUrl = require('./home-my.html');
     }
 }

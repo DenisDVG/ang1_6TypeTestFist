@@ -7,6 +7,7 @@ import { UserComponent } from '../app/user/user.component';
 import { UserService } from '../app/services/user.services';
 
 import './app.less';
+import { HomeMyComponent } from './home-my/home-my.component';
 
 export let app = module('app', [
     'ui.router'
@@ -22,6 +23,11 @@ export let app = module('app', [
                 url: '/home',
                 component: HomeComponent.NAME
             }).state(
+                {
+                    name: 'app.home-my',
+                    url: '/home-my',
+                    component: HomeMyComponent.NAME
+                }).state(
             {
                 name: 'app.user',
                 url: '/user?id',
@@ -32,6 +38,7 @@ export let app = module('app', [
     }])
     .component(AppComponent.NAME, new AppComponent())
     .component(HomeComponent.NAME, new HomeComponent())
+    .component(HomeMyComponent.NAME, new HomeMyComponent())
     .component(UserComponent.NAME, new UserComponent())
     .service(UserService.NAME, UserService);
 element(document).ready( () => {
