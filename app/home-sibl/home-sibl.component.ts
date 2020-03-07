@@ -1,5 +1,5 @@
-class HomeMyController implements ng.IController {
-    welcome:string='HomeMyController Child for HomeController';
+class HomeSiblController implements ng.IController {
+    welcome:string='HomeSiblController Sibling for HomeMyController';
     count: number;
     addCount(e): void {
         e.stopPropagation();
@@ -17,12 +17,12 @@ class HomeMyController implements ng.IController {
     }
 }
 
-export class HomeMyComponent implements ng.IComponentOptions {
-    static NAME: string = 'homeMyView';
+export class HomeSiblComponent implements ng.IComponentOptions {
+    static NAME: string = 'homeSiblView';
     controller: any;
     templateUrl: any;
     constructor() {
-        this.controller = HomeMyController;
-        this.templateUrl = require('./home-my.html');
+        this.controller = HomeSiblController;
+        this.templateUrl = require('./home-sibl.html');
     }
 }

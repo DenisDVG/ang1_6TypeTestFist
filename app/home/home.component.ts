@@ -1,15 +1,15 @@
 class HomeController implements ng.IController {
-    welcome:string='hello ng';
+    welcome:string='HomeController parent for HomeMyController';
     count: number;
-    addCount(e){
+    addCount(e): void {
         e.stopPropagation();
         this.count++;
     }
-    clearCount(){
+    clearCount(): void {
         // e.stopPropagation(); этот метод вынесен сразу в темплейт
         this.count = 0;
     }
-    clickDivCount(){
+    clickDivCount(): void {
         this.count++;
     }
     constructor() {

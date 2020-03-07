@@ -8,6 +8,7 @@ import { UserService } from '../app/services/user.services';
 
 import './app.less';
 import { HomeMyComponent } from './home-my/home-my.component';
+import { HomeSiblComponent } from './home-sibl/home-sibl.component';
 
 export let app = module('app', [
     'ui.router'
@@ -28,17 +29,23 @@ export let app = module('app', [
                     url: '/home-my',
                     component: HomeMyComponent.NAME
                 }).state(
+                    {
+                        name: 'app.home-sibl',
+                        url: '/home-sibl',
+                        component: HomeSiblComponent.NAME
+                    }).state(
             {
                 name: 'app.user',
                 url: '/user?id',
                 component: UserComponent.NAME,
             });
-
+            
         $urlRouterProvider.otherwise('/app');
     }])
     .component(AppComponent.NAME, new AppComponent())
     .component(HomeComponent.NAME, new HomeComponent())
     .component(HomeMyComponent.NAME, new HomeMyComponent())
+    .component(HomeSiblComponent.NAME, new HomeMyComponent())
     .component(UserComponent.NAME, new UserComponent())
     .service(UserService.NAME, UserService);
 element(document).ready( () => {
