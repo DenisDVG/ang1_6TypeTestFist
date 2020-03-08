@@ -5,5 +5,11 @@
     <div><button ng-click='$ctrl.clearCount(); $event.stopPropagation();'>Clear Count</button></div>
 </div>
 
-<home-my-view count='$ctrl.count'></home-my-view>
-<home-sibl-view count='$ctrl.count'></home-sibl-view>
+<home-my-view 
+count='$ctrl.count'
+on-clear-count-bind="$ctrl.onClearCountBind()">
+</home-my-view>
+
+<home-sibl-view 
+count='$ctrl.count'>
+</home-sibl-view>

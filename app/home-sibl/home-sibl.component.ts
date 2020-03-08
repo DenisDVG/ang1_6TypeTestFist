@@ -23,9 +23,9 @@ export class HomeSiblComponent implements ng.IComponentOptions {
     controller: any;
     templateUrl: any;
     constructor() {
-        // this.bindings = {
-        //     count : '=',
-        // };
+        this.bindings = {
+            count : '<',
+        };
         this.controller = HomeSiblController;
         this.templateUrl = require('./home-sibl.html');
     }

@@ -1,6 +1,7 @@
 <h1>{{$ctrl.welcome}}</h1>
 <h1>Count {{$ctrl.count}}</h1>
 <div><input ng-model='$ctrl.count'></button></div>
-<div ng-click='$ctrl.clickDivCount()'><button ng-click='$ctrl.addCount($event)'>Add Count</button>
-    <div><button ng-click='$ctrl.clearCount(); $event.stopPropagation();'>Clear Count</button></div>
+<div>
+    <button ng-click='$ctrl.addCount($event)'>Add Count</button>
+    <div><button ng-click='$ctrl.clearCount()'>Clear Count</button></div>
 </div>

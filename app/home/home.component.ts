@@ -9,6 +9,9 @@ class HomeController implements ng.IController {
         // e.stopPropagation(); этот метод вынесен сразу в темплейт
         this.count = 0;
     }
+    onClearCountBind = function() {
+        alert("событие переданое в родительский контроллер");
+    };
     clickDivCount(): void {
         this.count++;
     }

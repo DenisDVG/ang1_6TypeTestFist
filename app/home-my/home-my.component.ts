@@ -5,9 +5,12 @@ class HomeMyController implements ng.IController {
         e.stopPropagation();
         this.count++;
     }
+    onClearCountBind:() => {};
+
     clearCount(): void {
         // e.stopPropagation(); этот метод вынесен сразу в темплейт
         this.count = 0;
+        this.onClearCountBind();
     }
     clickDivCount(): void {
         this.count++;
@@ -25,6 +28,7 @@ export class HomeMyComponent implements ng.IComponentOptions {
     constructor() {
         this.bindings = {
             count : '=',
+            onClearCountBind: '&',
         };
         this.controller = HomeMyController;
         this.templateUrl = require('./home-my.html');
