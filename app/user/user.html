@@ -1,7 +1,8 @@
-<div ng-repeat="user in $ctrl.users" class="row">
+<div ng-repeat="userm in $ctrl.users" class="row">
     <div class="col-md-12">
         <h4 class="text-center">
-            {{user.name}}
+            {{userm.name}}
+            <user-format info="userm"></user-format>
         </h4>
     </div>
 </div>

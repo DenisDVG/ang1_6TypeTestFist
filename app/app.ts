@@ -9,6 +9,7 @@ import { UserService } from '../app/services/user.services';
 import './app.less';
 import { HomeMyComponent } from './home-my/home-my.component';
 import { HomeSiblComponent } from './home-sibl/home-sibl.component';
+import { UserFormat } from './user-direct/user-format.directive';
 
 export let app = module('app', [
     'ui.router'
@@ -46,7 +47,8 @@ export let app = module('app', [
     .component(HomeMyComponent.NAME, new HomeMyComponent())
     .component(HomeSiblComponent.NAME, new HomeSiblComponent())
     .component(UserComponent.NAME, new UserComponent())
-    .service(UserService.NAME, UserService);
+    .service(UserService.NAME, UserService)
+    .directive(UserFormat.NAME, UserFormat.factory());
 element(document).ready(() => {
     bootstrap(document, ['app']);
 });

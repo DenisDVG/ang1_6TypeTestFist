@@ -1,9 +1,11 @@
 import { UserService } from '../services/user.services';
 
 class UserController implements ng.IController {
-      static $inject = ['userService','$state'];
+      static $inject = ['userService','$state', '$scope'];
       users: any;
-        constructor(public user:UserService, public $state:ng.ui.IStateService) {
+        constructor(public user:UserService, 
+            public $state:ng.ui.IStateService, 
+            public $scope: ng.IScope) {
            this.user.getAll().then((data)=> {
                this.users = data.data;
           });
