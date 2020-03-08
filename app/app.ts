@@ -34,20 +34,19 @@ export let app = module('app', [
                         url: '/home-sibl',
                         component: HomeSiblComponent.NAME
                     }).state(
-            {
-                name: 'app.user',
-                url: '/user?id',
-                component: UserComponent.NAME,
-            });
-            
+                        {
+                            name: 'app.user',
+                            url: '/user?id',
+                            component: UserComponent.NAME,
+                        });
         $urlRouterProvider.otherwise('/app');
     }])
     .component(AppComponent.NAME, new AppComponent())
     .component(HomeComponent.NAME, new HomeComponent())
     .component(HomeMyComponent.NAME, new HomeMyComponent())
-    .component(HomeSiblComponent.NAME, new HomeMyComponent())
+    .component(HomeSiblComponent.NAME, new HomeSiblComponent())
     .component(UserComponent.NAME, new UserComponent())
     .service(UserService.NAME, UserService);
-element(document).ready( () => {
+element(document).ready(() => {
     bootstrap(document, ['app']);
 });

@@ -19,9 +19,13 @@ class HomeMyController implements ng.IController {
 
 export class HomeMyComponent implements ng.IComponentOptions {
     static NAME: string = 'homeMyView';
+    bindings: any;
     controller: any;
     templateUrl: any;
     constructor() {
+        this.bindings = {
+            count : '=',
+        };
         this.controller = HomeMyController;
         this.templateUrl = require('./home-my.html');
     }
