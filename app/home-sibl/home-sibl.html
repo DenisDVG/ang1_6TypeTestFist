@@ -1,11 +1,13 @@
 <h1>{{$ctrl.welcome}}</h1>
 <h1>Count {{$ctrl.count}}</h1>
-<div>
-    <input ng-model='$ctrl.count'>
-</div>
-<div ng-click='$ctrl.clickDivCount()'>
-    <button ng-click='$ctrl.addCount($event)'>Add Count</button>
-</div>
-<div>
-    <button ng-click='$ctrl.clearCount(); $event.stopPropagation();'>Clear Count</button>
+<div class="flex-container">
+    <div>
+        <input ng-model='$ctrl.count'>
+    </div>
+    <div ng-click='$ctrl.clickDivCount()'>
+        <button ng-click='$ctrl.addCount($event)'>Add Count</button>
+    </div>
+    <div>
+        <button ng-click='$ctrl.clearCount(); $event.stopPropagation();'>Clear Count</button>
+    </div>
 </div>

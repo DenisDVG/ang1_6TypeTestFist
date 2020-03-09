@@ -16,7 +16,7 @@ class HomeSiblController implements ng.IController {
         this.count = 0;
     }
 }
-
+require('./home-sibl.less');
 export class HomeSiblComponent implements ng.IComponentOptions {
     static NAME: string = 'homeSiblView';
     bindings: any;
