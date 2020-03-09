@@ -1,14 +1,21 @@
 import { UserService } from '../services/user.services';
+import { IFilterFilter } from 'angular';
 
 class UserController implements ng.IController {
-      static $inject = ['userService','$state', '$scope'];
-      users: any;
-        constructor(public user:UserService, 
-            public $state:ng.ui.IStateService, 
-            public $scope: ng.IScope) {
-           this.user.getAll().then((data)=> {
-               this.users = data.data;
-          });
+    static $inject = ['userService', '$state','userUppercaseFilter'];
+    users: any;
+    usersFiltered: any;
+    constructor(public user: UserService,
+        public $state: ng.ui.IStateService,
+        public userUppercaseFilter: ng.IFilterProvider
+        ) {
+        this.user.getAll().then((data) => {
+            this.users = data.data;
+            this.usersFiltered = this.users.filter(
+                (user) =>  user.name.includes('a'));
+
+        });
+
     }
 }
 

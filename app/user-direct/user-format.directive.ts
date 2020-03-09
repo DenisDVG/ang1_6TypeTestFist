@@ -5,9 +5,9 @@ export class UserFormat implements ng.IDirective
     template = 'Templ: <span>{{ ::customerInfo.name }}</span>  <input ng-model="customerInfo.name"></button>'; // привязано к имени переменной во внешн скоупе
     scope = {
         customerInfo: '=info'
-    };v
+    };
 
-    link = (scope: ng.IScope,
+    link: ng.IDirectiveLinkFn = (scope: ng.IScope,
         element: ng.IAugmentedJQuery,
         attrs: ng.IAttributes, ) => {
         var spanElem = element.find('span');
